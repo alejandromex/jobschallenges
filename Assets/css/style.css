@@ -1,0 +1,450 @@
+:root{
+    --void: #0e0b16;
+    --fuschia: #a239ca;
+    --jewel: #4717e6;
+    --stark: #e7dfdd;
+}
+
+@font-face{
+    font-family: Almida;
+    src: url('../fonts/Adamina-Regular.ttf');
+}
+
+body{
+    font-family: 'Kalam', cursive;
+}
+
+img{
+    max-width: 100%;
+}
+
+
+/* navBar */
+.navbar{
+    font-family: Almida;
+
+}
+
+.logo span{
+    color: var(--fuschia)
+}
+
+.navbar a{
+    color:var(--stark) !important;
+}
+
+.dropdown-menu a{
+    color: var(--void) !important;
+}
+
+.btn-busqueda{
+    background-color: var(--void);
+    border-color: var(--fuschia);
+    color: var(--stark);
+    border-radius: 10px;
+}
+
+
+/* Inicio presentacion */
+
+.presentacion{
+    background-image: url('../img/fondoEstrellas.jpg');
+    background-position: center;
+	background-size: cover;
+    height:  100vh;
+    padding-top: 80px;
+    border-bottom: 3px solid var(--jewel);
+}
+
+
+.titulos{
+    color:var(--stark);
+    font-family: Almida;
+    /* border: 1px solid var(--stark); */
+    width: 300px;
+    display: block;
+    margin: 0 auto;
+    max-width: 300px;
+    max-height: 300px;
+    margin-top: 60px;
+}
+
+.titulos h1{
+    text-align: center;
+    font-size: 100px;
+}
+
+.textostitulos{
+    font-size: 30px;
+    line-height: 29px;
+}
+
+.titulos span{
+    color: var(--fuschia);
+}
+
+
+.boton-line{
+    margin-top: 10px;
+    border-color: var(--stark);
+    padding:20px;
+    display: block;
+    width: 150px;
+    text-align: center;
+    color: var(--stark)
+}
+
+.titulos p{
+    font-size: 15px;
+}
+
+.titulos p span{
+    font-size: 15px;
+    color: var(--fuschia);
+    text-transform: uppercase;
+}
+
+
+
+/* Talentos presentacion */
+
+.talentos-presentacion{
+    margin-top: 20px;
+    
+}
+
+.talentos-superior{
+    display: grid;
+    grid-template-columns: 65% 35%;
+    margin-top: 50px;
+    overflow: hidden;
+
+
+}
+
+.talentos-superior-info{
+
+}
+
+.talentos-superior-info h2{
+}
+
+.talentos-superior-info h2:after{
+    content: "";
+	display:block;
+	width: 15rem;
+	height: .5rem;
+	background-color: var(--jewel);
+	margin-top: 1rem;
+}
+
+.talentos-superior-info p{
+    margin-top: 40px;
+    font-size: 10px;
+    text-align: justify;
+}
+
+.talentos-superior-info p span{
+    color: var(--void)
+}
+
+.talentos-inferior{
+    margin-top: 8px;
+    display:grid;
+    grid-template-columns: 20% 35% 45%;
+    column-gap: 8px;
+    max-height: 120px;
+    overflow: hidden;
+}
+
+.btn-talentos
+{
+    margin-top: 20px;
+    background-color: var(--jewel);
+    color: var(--stark);
+    display: block;
+    width: 40%;
+}
+
+.fotos3 {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    row-gap: 8px;
+}
+
+.foto2{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 8px;
+}
+
+
+.video-presentacion{
+    margin-top: 50px;
+    background-color: var(--void);
+    color: var(--stark);
+    border-top: 5px solid var(--jewel);
+    border-bottom:3px solid var(--jewel);
+}
+
+.video-contenido
+{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin-top: 50px;
+}
+
+
+.video-contenido .btn{
+    background-color: rgb(218, 99, 44);
+    width: 70%;
+    margin-top: 20px;
+}
+
+
+.ultimo-post{
+    display: grid;
+    grid-template-columns: 60% 40%;
+    column-gap: 10px;
+}
+
+
+
+
+.hola{
+    background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  footer */
+
+
+.encabezado-footer ul li{
+    list-style: none;
+    display: inline;
+    color: var(--stark);
+    margin-left: 20px;
+}
+
+.encabezado-footer ul:after{
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: var(--stark);
+    display:block;
+    
+}
+
+.redes-sociales{
+    border-right: 1px solid gray;
+}
+
+.contacto{
+    border-right: 1px solid gray;
+}
+
+.lomasbuscado{
+    color:white;
+}
+
+footer{
+    border-top: 5px solid var(--jewel);
+
+    margin: 30px 0px 0px 0px;
+    background-color: var(--void);
+    color: var(--stark);
+
+}
+
+.contenido-footer{
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    column-gap: 10px;
+}
+
+.redes-sociales p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.redes{
+    font-size: 50px;
+    text-align: center;
+    
+}
+
+.redes-sociales span{
+    color: var(--fuschia)
+}
+
+.contacto span{
+    color: var(--fuschia)
+}
+
+.informacion img{
+    width: 100px;
+}
+
+:root{
+    --stary: #0375B4;
+    --sunflower: #ffce00;
+    --irises: #007849;
+    --evening: #262228;
+}
+
+
+/* Pagina de talentos */
+.listado-talentos{
+    background-image: url('../img/fondo.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 80px;
+    font-family: 'PT Serif', serif;
+}
+
+.contenedor{
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.presentacion-talento{
+    background-color: var(--stary);
+    color: white;
+    margin-top: 30px;
+    padding:20px;
+}
+
+.presentacion-talento h2{
+    text-align: center;
+}
+
+.talentos-descripcion{
+    text-align: center;
+}
+
+.talentos-invitacion{
+    margin-top: 50px;
+    background-color: var(--stary);
+}
+
+.contenedor-mediano{
+    max-width: 800px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding-top: 50px;
+    font-family: 'Trispace', sans-serif;
+    padding-bottom: 50px;
+
+}
+
+
+.contenedor-mediano h3{
+    color: var(--sunflower);
+    font-family: 'Trispace', sans-serif;
+
+}
+
+.contenedor-mediano p{
+    color: white;
+    padding: 20px;
+}
+
+
+.lista-talentos .card{
+    padding:5px;
+}
+
+
+.bg-talento{
+    background-color: var(--stary);
+}
+
+.talento-perfil{
+    padding-top: 55px;
+    background: #181818 !important;
+}
+
+
+.talento-perfil .contenedor-perfil img{
+    border-radius: 50%;
+    width: 40%;
+}
+
+
+
+.contenedor-perfil{
+    border-bottom: 3px solid var(--fuschia);
+    padding:40px;
+    background-color: #333;
+}
+
+.detalles-perfil{
+    max-width: 1000px;
+    margin: 0px auto !important;
+    color:gray;
+    align-items: center !important;
+    display: block;
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+
+.color-rosa{
+    color: var(--fuschia);
+}
+
+.redes-perfil i{
+    padding-top: 20px;
+    color: var(--fuschia);
+    font-size: 20px;
+    margin-left: 10px;
+    
+}
+
+.talentos-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+    padding:10px;
+}
+
+.texto-perfil{
+    min-height: 100px;
+}
+
+
+.talentos-grid a
+{
+    text-decoration: none;
+    color: black
+}
+
+.talentos-grid .card{
+    height: 500px;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.talentos-grid .card img{
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
