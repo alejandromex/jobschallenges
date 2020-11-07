@@ -1,5 +1,7 @@
 <?php
     $url = "http://localhost/JobsChallenge/"; 
+    session_start();
+
 ?>
 
 <!DOCTYPE html>
@@ -8,9 +10,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="http://localhost/JobsChallenge/Assets/css/colaboraciones.css">
-    <link rel="stylesheet" href="http://localhost/JobsChallenge/Assets/css/style.css">
-    <link rel="stylesheet" href="http://localhost/JobsChallenge/Assets/css/carrucel.css">
+    <link rel="stylesheet" href="<?=$url?>Assets/css/colaboraciones.css">
+    <link rel="stylesheet" href="<?=$url?>Assets/css/style.css">
+    <link rel="stylesheet" href="<?=$url?>Assets/css/carrucel.css">
     <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/15ab005e9b.js" crossorigin="anonymous"></script>
@@ -26,7 +28,7 @@
 
 
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand logo" href="http://localhost/JobsChallenge/index.php">Talent <span>FINDER</span></a>
+  <a class="navbar-brand logo" href="<?=$url?>index.php">Talent <span>FINDER</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon expandir"></span>
   </button>
@@ -38,7 +40,7 @@
         <a class="nav-link" href="<?=$url?>talento.php/perfil/<?=$_SESSION['id']?>">Mi perfil</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="http://localhost/JobsChallenge/cerrarSesion.php">Cerrar sesion</a>
+        <a class="nav-link" href="<?=$url?>cerrarSesion.php">Cerrar sesion</a>
       </li>
       <?php endif ?>
 
@@ -65,7 +67,7 @@
           Talentos
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="#">Buscar</a>
-          <a class="dropdown-item" href="http://localhost/JobsChallenge/talentos.php">Ver listado</a>
+          <a class="dropdown-item" href="<?=$url?>talentos.php">Ver listado</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">¿Te interesa ser un talento?</a>
         </div>
@@ -82,6 +84,8 @@
       require_once 'config/dbConnect.php';
       require_once 'Controllers/usuario.controller.php';
       require_once 'Models/usuario.modelo.php';
+      require_once 'Controllers/post.controller.php';
+      require_once 'Models/post.modelo.php';
 
       
       

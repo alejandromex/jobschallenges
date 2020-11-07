@@ -1,9 +1,5 @@
 <?php
-    $url = "http://localhost/JobsChallenge/"; 
-
-    session_start();
-    require_once 'Models/post.modelo.php';
-    require_once 'config/dbConnect.php';
+    require_once 'includes/header.php';
     $idUsuario = $_SESSION['id'];
     $idPost = $_POST['idpost'];
 

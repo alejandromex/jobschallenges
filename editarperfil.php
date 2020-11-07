@@ -1,7 +1,5 @@
 <?php
-session_start();
-require_once 'config/dbConnect.php';
-require_once 'Models/usuario.modelo.php';
+require_once "includes/header.php";
 
 $return = "aviso";
 
@@ -97,13 +95,13 @@ if(isset($_POST['submit']))
 ?>
 
 <?php if($return == "passwordMalo") : ?>
-    <script>window.location.href="http://localhost/JobsChallenge/talento.php/perfil/<?=$_SESSION['id']?>/passwordIncorrecto";</script>
+    <script>window.location.href="<?=$url?>talento.php/perfil/<?=$_SESSION['id']?>/passwordIncorrecto";</script>
 <?php endif ?>
 
 <?php if($return == "passwordNoEnviado") : ?>
-    <script>window.location.href="http://localhost/JobsChallenge/talento.php/perfil/<?=$_SESSION['id']?>/passwordNoEnviado";</script>
+    <script>window.location.href="<?=$url?>talento.php/perfil/<?=$_SESSION['id']?>/passwordNoEnviado";</script>
 <?php endif ?>
 
 <?php if($return == "aviso") : ?>
-    <script>window.location.href="http://localhost/JobsChallenge/talento.php/perfil/<?=$_SESSION['id']?>";</script>
+    <script>window.location.href="<?=$url?>talento.php/perfil/<?=$_SESSION['id']?>";</script>
 <?php endif ?>

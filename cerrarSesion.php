@@ -1,7 +1,5 @@
-<?php session_start(); ?>
-<?php
-    $url = "http://localhost/JobsChallenge/"; 
 
+<?php
      require_once 'includes/header.php'; 
 ?>
 

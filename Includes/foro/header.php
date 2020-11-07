@@ -32,7 +32,7 @@
 
 
     <?php
-        session_start();
+      session_start();
       require_once 'config/dbConnect.php';
       require_once 'Controllers/usuario.controller.php';
       require_once 'Models/usuario.modelo.php';

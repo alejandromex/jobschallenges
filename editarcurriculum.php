@@ -1,7 +1,5 @@
 <?php
-session_start();
-require_once 'config/dbConnect.php';
-require_once 'Models/usuario.modelo.php';
+    require_once 'includes/header.php';
 
 $usuariosModelo = new UsuarioModelo();
 
@@ -55,5 +53,5 @@ $usuariosModelo = new UsuarioModelo();
 
 ?>
 
-<script>window.location.href="http://localhost/JobsChallenge/talento.php/perfil/<?=$_SESSION['id']?>";</script>
+<script>window.location.href="<?=$url?>talento.php/perfil/<?=$_SESSION['id']?>";</script>
 

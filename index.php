@@ -1,7 +1,4 @@
-<?php session_start(); ?>
 <?php
-    $url = "http://localhost/JobsChallenge/"; 
-
      require_once 'includes/header.php'; 
 ?>
 
@@ -38,19 +35,19 @@
                     </div>
                     <div class="fotos3">
                         <div class="foto1">
-                            <img src="http://localhost/JobsChallenge/Assets/img/foto1.jpg" alt="">
+                            <img src="<?=$url?>Assets/img/foto1.jpg" alt="">
                         </div>
                         <div class="foto2">
-                            <img class="img-fluid" src="http://localhost/JobsChallenge/Assets/img/foto2.jpg" alt="">
-                            <img class="img-fluid" src="http://localhost/JobsChallenge/Assets/img/foto3.jpg" alt="">
+                            <img class="img-fluid" src="<?=$url?>Assets/img/foto2.jpg" alt="">
+                            <img class="img-fluid" src="<?=$url?>Assets/img/foto3.jpg" alt="">
                         </div>
                     </div>
                 </div>
 
                 <div class="talentos-inferior">
-                    <img class="img-fluid" src="http://localhost/JobsChallenge/Assets/img/foto4.jpg" alt="">
-                    <img class="img-fluid" src="http://localhost/JobsChallenge/Assets/img/foto5.jpg" alt="">
-                    <img class="img-fluid" src="http://localhost/JobsChallenge/Assets/img/foto6.jpg" alt="">
+                    <img class="img-fluid" src="<?=$url?>Assets/img/foto4.jpg" alt="">
+                    <img class="img-fluid" src="<?=$url?>Assets/img/foto5.jpg" alt="">
+                    <img class="img-fluid" src="<?=$url?>Assets/img/foto6.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -117,7 +114,7 @@
     <div class="container">
             <h2>Ultimo post</h2>
         <div class="ultimo-post">
-            <img src="http://localhost/JobsChallenge/Assets/img/foto7.jpg" alt="">
+            <img src="<?=$url?>Assets/img/foto7.jpg" alt="">
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt laudantium quis reprehenderit quidem. Magni maiores nesciunt consectetur, cupiditate perferendis quos ratione reprehenderit saepe dolores accusamus reiciendis error dolorem, nemo veritatis!
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt laudantium quis reprehenderit quidem. Magni maiores nesciunt consectetur, cupiditate perferendis quos ratione reprehenderit saepe dolores accusamus reiciendis error dolorem, nemo veritatis!

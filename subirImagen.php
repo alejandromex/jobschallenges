@@ -1,8 +1,7 @@
 <?php
-session_start();
-require_once 'config/dbConnect.php';
-require_once 'Controllers/usuario.controller.php';
-require_once 'Models/usuario.modelo.php';
+
+require_once 'includes/header.php';
+
 $fecha = new DateTime();
 #webdebe.com
 if (isset($_POST['subir'])) {

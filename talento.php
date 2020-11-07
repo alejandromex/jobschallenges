@@ -1,6 +1,4 @@
-<?php session_start(); ?>
 <?php
-    $url = "http://localhost/JobsChallenge/"; 
      require_once 'includes/header.php'; 
 
      $rutas = $_SERVER["REQUEST_URI"];
@@ -71,7 +69,7 @@
             </div>
 
             <div class="col-md-6 col-sm-12">
-                <img src="http://localhost/JobsChallenge/<?=$usuario->imagen?>" alt="">
+                <img src="<?=$url?><?=$usuario->imagen?>" alt="">
             </div>
         </div>
     </div>
