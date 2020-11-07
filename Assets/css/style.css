@@ -118,8 +118,6 @@ img{
     grid-template-columns: 65% 35%;
     margin-top: 50px;
     overflow: hidden;
-
-
 }
 
 .talentos-superior-info{
@@ -208,27 +206,6 @@ img{
     column-gap: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*  footer */
-
-
 .encabezado-footer ul li{
     list-style: none;
     display: inline;
@@ -260,7 +237,6 @@ img{
 footer{
     border-top: 5px solid var(--jewel);
 
-    margin: 30px 0px 0px 0px;
     background-color: var(--void);
     color: var(--stark);
 
@@ -495,3 +471,23 @@ footer{
 }
 
 
+.proyectos{
+    background-image: url("../img/fondoproyecto.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    padding-top: 80px;
+}
+
+.menu-proyectos  a{
+    color:white;
+    font-size: 20px;
+    background-color: var(--void);
+    border: 1px solid var(--void);
+}
+
+.menu-proyectos .active{
+    background-color: white !important;
+    color: var(--void) !important;
+}

@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@1&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
     <title>Home</title>
 </head>
@@ -57,7 +57,7 @@
         <a class="nav-link" href="#">Bolsa de Trabajo</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Proyectos Activos</a>
+        <a class="nav-link" href="<?=$url?>proyectos.php">Proyectos Activos</a>
       </li>
 
       <li class="nav-item dropdown">

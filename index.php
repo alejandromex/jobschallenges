@@ -18,7 +18,7 @@
 
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <button type="button" class="btn boton-line bg-dark">Iniciar</button>
-                    <button type="button" class="btn boton-line bg-dark">Informacion</button>
+                    <button type="button" class="btn boton-line bg-dark" data-toggle="modal" data-target="#informacionModal">Informacion</button>
                 </div>
             </div>
         </div>
