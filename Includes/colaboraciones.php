@@ -35,6 +35,12 @@
                                 <li class="nav-item">
                                     <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Historial</a>
                                 </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#proyectos" role="tab" aria-controls="proyectos" aria-selected="false">Mis proyectos</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#colaboraciones" role="tab" aria-controls="colaboraciones" aria-selected="false">Mis colaboraciones</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -112,7 +118,7 @@
                                                 <p><?=$usuario->profesion?></p>
                                             </div>
                                         </div>
-                            </div>
+                            </div> 
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
                                             <div class="col-md-6">
@@ -147,6 +153,14 @@
                                             </div>
                                         </div>
                                 
+                            </div>
+
+                            <div class="tab-pane fade" id="proyectos" role="tabpanel" aria-labelledby="profile-tab">
+                                proyectos
+                            </div>
+
+                            <div class="tab-pane fade" id="colaboraciones" role="tabpanel" aria-labelledby="profile-tab">
+                                colaboraciones
                             </div>
                         </div>
                     </div>

@@ -211,11 +211,6 @@ img{
 
 
 
-.hola{
-    background-color: red;
-}
-
-
 
 
 
@@ -448,3 +443,55 @@ footer{
     height: 300px;
     margin: 0 auto;
 }
+
+
+
+/* Foro */
+
+
+:root{
+    --feather: #3f788a;
+    --marine: #57bc90;
+    --forest: #015249;
+    --sleek: #a5a5af;
+}
+.foro .row{
+    padding: 0px;
+    margin: 0px;
+}
+
+.foro{
+    padding-top: 55px;
+    font-family: 'Lora', serif;
+
+}
+
+
+
+.menuForo{
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+.menuForo h2{
+    text-align: center;
+    color: var(--sleek);
+    padding:20px;
+    background-color: var(--evening);
+    margin-bottom: 0px;
+
+}
+
+.bgMenu{
+    background-color: var(--stary);
+    color: white;
+    padding:10px;
+}
+
+.bgSubMenu{
+    background-color: var(--feather);
+    color: #eeeeee;
+    padding:10px;
+}
+
+

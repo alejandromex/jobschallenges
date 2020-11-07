@@ -21,11 +21,35 @@
 
     $usuarioController = new UsuarioController();
     $usuario = $usuarioController->MostrarUsuario($usuarioId);
+    $experiencia = $usuario->trabajoexp;
+
+    $experiencia = $usuario->trabajoexp;
+    $escuela = $usuario->educacion;
+    
+    $experiencia_array = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $experiencia), true );
+    $educacion_array = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $escuela), true );
 
     if($usuario == null)
     {
         echo "<script>window.location.href='http://localhost/JobsChallenge/talentos.php';</script>";
 
+    }
+
+    if(count($rutas) >= 5)
+    {
+        if(isset($rutas[5]) && $rutas[5] == "passwordIncorrecto")
+        {
+            echo "
+                        <script>           
+                          Swal.fire({
+                            position: 'center',
+                            icon: 'error',
+                            title: 'Contraseña incorrecta, imposible editar',
+                            showConfirmButton: false,
+                            timer: 2500
+                          })
+                      </script>";
+        }
     }
 
 ?>

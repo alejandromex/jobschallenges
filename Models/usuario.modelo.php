@@ -31,7 +31,7 @@
             $this->password = $password;
 
 
-            $response = $this->conn->query("INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `puntos`, `proyectos`, `colaboraciones`, `imagen`, `area`, `fecha`, `celular`, `profesion`, `pagina`, `linkgit`, `linklab`, `nick`, `info`, `ingles`,`estado`) VALUES (NULL, '$nombre', '$apellido', '$email', '$password', '0', '0', '0', 'null', '$area', current_timestamp(), '0','0','0', '0','0','0', '0','0','0' )");
+            $response = $this->conn->query("INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `puntos`, `proyectos`, `colaboraciones`, `imagen`, `area`, `fecha`, `celular`, `profesion`, `pagina`, `linkgit`,`facebook`, `linklab`, `nick`, `info`, `ingles`,`estado`) VALUES (NULL, '$nombre', '$apellido', '$email', '$password', '0', '0', '0', 'null', '$area', current_timestamp(), '0','0','0', '0','0','0','0', '0','0','0' )");
 
             if($response)
             {
@@ -73,6 +73,24 @@
         public function getUsuarios(){
             $usuarios = $this->conn->query("SELECT * from usuarios");
             return $usuarios;
+        }
+
+        public function actualizarPerfil($nombre,$apellido,$celular,$profesion,$pagina,$github,$gitlab,$facebook,$nick,$info,$ingles,$estado,$id)
+        {
+            $response = $this->conn->query("UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', celular = '$celular', profesion = '$profesion', pagina = '$pagina', linkgit = '$github', linklab = '$gitlab', facebook = '$facebook', nick = '$nick', info = '$info', ingles = '$ingles', estado = '$estado' WHERE usuarios.id = '$id';");
+            return $response;
+        }
+
+        public function validarPassword($usuarioId)
+        {
+            $response = $this->conn->query("SELECT password from usuarios where id = $usuarioId");
+            return $response->fetch_object();
+        }
+
+        public function editarCv($personal, $trabajos,$habilidades,$escuela,$id)
+        {
+            $response = $this->conn->query("UPDATE usuarios SET personal = '$personal', trabajoexp = '$trabajos', skills = '$habilidades', educacion = '$escuela' WHERE usuarios.id = '$id';");
+            return $response;
         }
     }
 

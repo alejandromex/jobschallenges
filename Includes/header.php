@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Trispace:wght@700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@1&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
 
 
     <title>Home</title>
@@ -50,7 +51,7 @@
       </li>
       <?php endif ?>
       <li class="nav-item">
-        <a class="nav-link" href="#">Foro</a>
+        <a class="nav-link" href="<?=$url?>foro.php">Foro</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Bolsa de Trabajo</a>
@@ -81,6 +82,9 @@
       require_once 'config/dbConnect.php';
       require_once 'Controllers/usuario.controller.php';
       require_once 'Models/usuario.modelo.php';
+
+      
+      
 
     ?>
 

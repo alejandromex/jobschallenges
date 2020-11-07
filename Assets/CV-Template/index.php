@@ -40,11 +40,12 @@
 		<section>
 			<article>
 				<div class="sectionTitle">
-					<h1>Personal Profile</h1>
+					<h1>Informacion Personal</h1>
 				</div>
-				
 				<div class="sectionContent">
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer dolor metus, interdum at scelerisque in, porta at lacus. Maecenas dapibus luctus cursus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<?php if($usuario->personal != null) : ?>
+						<?=$usuario->personal?>
+					<?php endif ?>
 				</div>
 			</article>
 			<div class="clear"></div>
@@ -53,26 +54,39 @@
 		
 		<section>
 			<div class="sectionTitle">
-				<h1>Work Experience</h1>
+				<h1>Experiencia Laboral</h1>
 			</div>
-			
+
+			<?php
+				 $experiencia = $usuario->trabajoexp;
+				 $escuela = $usuario->educacion;
+			 ?>
+			<?php
+
+				$experiencia_array = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $experiencia), true );
+				$educacion_array = json_decode( preg_replace('/[\x00-\x1F\x80-\xFF]/', '', $escuela), true );
+				$skills = $usuario->skills;
+				$skills_sep = explode(" ",$skills);
+
+			?>
+
 			<div class="sectionContent">
 				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">April 2011 - Present</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<h2><?=$experiencia_array['titulo1']?></h2>
+					<p class="subDetails"><?=$experiencia_array['fecha1']?></p>
+					<p><?=$experiencia_array['labores1']?></p>
 				</article>
 				
 				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">Janruary 2007 - March 2011</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<h2><?=$experiencia_array['titulo2']?></h2>
+					<p class="subDetails"><?=$experiencia_array['fecha2']?></p>
+					<p><?=$experiencia_array['labores2']?></p>
 				</article>
 				
 				<article>
-					<h2>Job Title at Company</h2>
-					<p class="subDetails">October 2004 - December 2006</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim. Vestibulum bibendum mattis dignissim. Proin id sapien quis libero interdum porttitor.</p>
+					<h2><?=$experiencia_array['titulo3']?></h2>
+					<p class="subDetails"><?=$experiencia_array['fecha3']?></p>
+					<p><?=$experiencia_array['labores3']?></p>
 				</article>
 			</div>
 			<div class="clear"></div>
@@ -86,36 +100,25 @@
 			
 			<div class="sectionContent">
 				<ul class="keySkills">
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
-					<li>A Key Skill</li>
+					<?php foreach($skills_sep as $key => $value) : ?>
+					<li><?=$value?></li>
+					<?php endforeach ?>
 				</ul>
 			</div>
 			<div class="clear"></div>
 		</section>
 		
-		
+	
 		<section>
 			<div class="sectionTitle">
-				<h1>Education</h1>
+				<h1>Educacion</h1>
 			</div>
 			
 			<div class="sectionContent">
 				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
-				</article>
-				
-				<article>
-					<h2>College/University</h2>
-					<p class="subDetails">Qualification</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ultricies massa et erat luctus hendrerit. Curabitur non consequat enim.</p>
+					<h2><?=$educacion_array['nombre']?></h2>
+					<p class="subDetails"><?=$educacion_array['fecha']?></p>
+					<p><?=$educacion_array['carrera']?></p>
 				</article>
 			</div>
 			<div class="clear"></div>
