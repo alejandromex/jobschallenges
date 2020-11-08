@@ -1,6 +1,9 @@
-<?php $proyectoController = new ProyectoController();
-
-    $proyectos = $proyectoController->getProyectos();
+<?php 
+    if(isset($_SESSION['login']) ) 
+    {
+    $proyectoController = new ProyectoController();
+    $proyectos = $proyectoController->MisProyectos($_SESSION['id']);
+    
 ?>
 
 <div class="row">
@@ -37,7 +40,7 @@
             <button type="button" class="btn btn-info">Postularme</button>
             <?php endif ?>
 
-              <?php if(isset($_SESSION['login'])) : ?>
+              <?php if(isset($_SESSION)) : ?>
               <?php if($_SESSION['id'] == $proyecto->creador) : ?>
               <a href="<?=$url?>proyecto.php/<?=$proyecto->id?>" class="btn btn-success">Ver nota completa</a>
 
@@ -51,7 +54,5 @@
   <?php endwhile ?>
 </div>
 
-<br>
-<br>
-
+              <?php }?>
 

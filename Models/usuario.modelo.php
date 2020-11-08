@@ -46,6 +46,10 @@
             //Validamos si existe el email
             $email_existe = $this->conn->query("SELECT * from usuarios where email = '$email'");
             $user = $email_existe->fetch_object();
+            if($user == null)
+            {
+                return "error";
+            }
             if($password == $user->password)
             {
                 $_SESSION['login'] = "ok";
@@ -56,7 +60,6 @@
                 return "error";
             }
 
-            return null;
         }  
         
         public function MostrarUsuario($id)

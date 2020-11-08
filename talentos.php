@@ -80,43 +80,7 @@
 <!--  -->
 
 
-<nav class="navbar navbar-expand-lg bg-talento">
-  <a class="navbar-brand ">Encuentra y conectate con tu talento ideal</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon expandir"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Temas
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Software</a>
-          <a class="dropdown-item" href="#">Hardware</a>
-          <a class="dropdown-item" href="#">Medicina</a>
-          <a class="dropdown-item" href="#">Derecho</a>
-          <a class="dropdown-item" href="#">Yoga</a>
-          <a class="dropdown-item" href="#">Matematicas</a>
-          <a class="dropdown-item" href="#">IT</a>
-          <a class="dropdown-item" href="#">Redes</a>
-          <a class="dropdown-item" href="#">Carpinteria</a>
-          <a class="dropdown-item" href="#">Fianzas</a>
-          <a class="dropdown-item" href="#">Administracion</a>
-          <a class="dropdown-item" href="#">Meditacion</a>
-          <a class="dropdown-item" href="#">Superacion Personal</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">¿Te interesa ser un talento?</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-      <button class="btn btn-busqueda my-2 my-sm-0" type="submit">Buscar talento</button>
-    </form>
-
-  </div>
-</nav>
 
 <!--  -->
 

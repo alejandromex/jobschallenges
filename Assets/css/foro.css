@@ -494,7 +494,10 @@
   }
   
   .foro{
-    background-color: #ccc;
+    background-image: url('../img/fondoforo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     z-index: -999999;
   }
 

@@ -7,19 +7,6 @@
 
 <footer>
     <div class="container">
-        <div class="encabezado-footer">
-            <ul>
-                <li class="lomasbuscado">Lo mas buscado</li>
-                <li>Tecnologia</li>
-                <li>Ciencias Humanas</li>
-                <li>Administracion</li>
-                <li>Hardware</li>
-                <li>Software</li>
-                <li>Recursos Humanos</li>
-                <li>IT</li>
-            </ul>
-        </div>
-    
         <div class="contenido-footer">
             <div class="redes-sociales">
                 <h2>TFGJ</h2>

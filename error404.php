@@ -1,3 +1,8 @@
+<?php require_once 'includes/header.php'; ?>
 
-prueba
 
+    
+
+
+
+<?php require_once 'includes/footer.php'; ?>

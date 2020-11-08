@@ -6,31 +6,31 @@
   <div class="form-group row">
     <label for="nombre" class="col-sm-2 col-form-label">Nombre</label>
     <div class="col-sm-10">
-      <input type="text" name="nombre" class="form-control" id="inputEmail3" placeholder="Nombre" require>
+      <input type="text" name="nombre" class="form-control"  placeholder="Nombre" require>
     </div>
   </div>
   <div class="form-group row">
     <label for="apellido" class="col-sm-2 col-form-label">Apellido</label>
     <div class="col-sm-10">
-      <input type="text" name="apellido" class="form-control" id="inputPassword3" placeholder="Apellido" require>
+      <input type="text" name="apellido" class="form-control"  placeholder="Apellido" require>
     </div>
   </div>
   <div class="form-group row">
     <label for="email" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input type="email" name="email" class="form-control" id="inputPassword3" placeholder="Email" require>
+      <input type="email" name="email" class="form-control"  placeholder="Email" require>
     </div>
   </div>
   <div class="form-group row">
     <label for="password" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" require>
+      <input type="password" name="password" class="form-control"  placeholder="Password" require>
     </div>
   </div>
   <div class="form-group row">
     <label for="area" class="col-sm-2 col-form-label">Area</label>
     <div class="col-sm-10">
-      <input type="text" name="area" class="form-control" id="inputPassword3" placeholder="Area" require>
+      <input type="text" name="area" class="form-control"  placeholder="Area" require>
     </div>
   </div>
   <div class="form-group row">

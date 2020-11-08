@@ -20,6 +20,6 @@ if (isset($_POST['subir'])) {
 }
 ?>
     
-    <script>window.location.href="http://localhost/JobsChallenge/talento.php/perfil/<?=$_SESSION['id']?>";</script>";
+    <script>window.location.href="<?=$url?>talento.php/perfil/<?=$_SESSION['id']?>";</script>";
 
     

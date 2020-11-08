@@ -21,13 +21,14 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
 
     <title>Home</title>
 </head>
 <body>
 
 
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar fixed-top navbar-expand-lg barra-principal navbar-dark bg-dark">
   <a class="navbar-brand logo" href="<?=$url?>index.php">Talent <span>FINDER</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon expandir"></span>
@@ -86,6 +87,8 @@
       require_once 'Models/usuario.modelo.php';
       require_once 'Controllers/post.controller.php';
       require_once 'Models/post.modelo.php';
+      require_once 'Controllers/proyecto.controller.php';
+      require_once 'Models/proyecto.modelo.php';
 
       
       

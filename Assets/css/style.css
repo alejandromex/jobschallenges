@@ -44,6 +44,10 @@ img{
     border-radius: 10px;
 }
 
+.barra-principal{
+
+}
+
 
 /* Inicio presentacion */
 
@@ -115,9 +119,17 @@ img{
 
 .talentos-superior{
     display: grid;
-    grid-template-columns: 65% 35%;
     margin-top: 50px;
     overflow: hidden;
+}
+
+@media(min-width:768px)
+{
+    .talentos-superior{
+        grid-template-columns: 65% 35%;
+
+    }
+
 }
 
 .talentos-superior-info{
@@ -147,12 +159,19 @@ img{
 }
 
 .talentos-inferior{
-    margin-top: 8px;
-    display:grid;
-    grid-template-columns: 20% 35% 45%;
-    column-gap: 8px;
-    max-height: 120px;
-    overflow: hidden;
+    display:none;
+}
+
+@media(min-width:768px)
+{
+    .talentos-inferior{
+        margin-top: 8px;
+        display:grid;
+        grid-template-columns: 20% 35% 45%;
+        column-gap: 8px;
+        max-height: 120px;
+        overflow: hidden;
+    }
 }
 
 .btn-talentos
@@ -177,9 +196,11 @@ img{
 }
 
 
+
 .video-presentacion{
     margin-top: 50px;
-    background-color: var(--void);
+    /* background-color: var(--void); */
+    background-color: rgb(44, 43, 43);
     color: var(--stark);
     border-top: 5px solid var(--jewel);
     border-bottom:3px solid var(--jewel);
@@ -188,10 +209,17 @@ img{
 .video-contenido
 {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: repeat(1,1fr);
     margin-top: 50px;
 }
 
+@media(min-width:768px)
+{
+    .video-contenido{
+        grid-template-columns: 70% 30%;
+
+    }
+}
 
 .video-contenido .btn{
     background-color: rgb(218, 99, 44);
@@ -202,8 +230,16 @@ img{
 
 .ultimo-post{
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: repeat(1,1fr);
     column-gap: 10px;
+}
+
+@media(min-width:768px)
+{
+    .ultimo-post{
+        grid-template-columns: 60% 40%;
+
+    }
 }
 
 .encabezado-footer ul li{
@@ -236,16 +272,24 @@ img{
 
 footer{
     border-top: 5px solid var(--jewel);
-
-    background-color: var(--void);
+    background-color: rgb(44, 43, 43);
     color: var(--stark);
 
 }
 
 .contenido-footer{
     display: grid;
-    grid-template-columns: 30% 30% 40%;
+    grid-template-columns: repeat(1,1fr);
     column-gap: 10px;
+    padding-bottom: 15px;
+}
+
+@media(min-width:768px)
+{
+    .contenido-footer{
+        grid-template-columns: 30% 30% 40%;
+
+    }
 }
 
 .redes-sociales p{
@@ -367,13 +411,10 @@ footer{
 }
 
 .detalles-perfil{
-    max-width: 1000px;
+    max-width:900px;
     margin: 0px auto !important;
     color:gray;
-    align-items: center !important;
-    display: block;
     text-align: center !important;
-    justify-content: center !important;
 }
 
 
@@ -391,10 +432,18 @@ footer{
 
 .talentos-grid{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     column-gap: 10px;
     row-gap: 10px;
     padding:10px;
+}
+
+@media(min-width:768px)
+{
+    .talentos-grid{
+        grid-template-columns: repeat(3, 1fr);
+
+    }
 }
 
 .texto-perfil{
@@ -490,4 +539,31 @@ footer{
 .menu-proyectos .active{
     background-color: white !important;
     color: var(--void) !important;
+}
+
+.centrar-contenido .card{
+    
+}
+
+.error404{
+    font-size: 200px;
+    color:black !important;
+    border-bottom: 1px solid black;
+}
+
+.proyectos{
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.desc
+{
+    background-color: rgba(199, 194, 194,.5);
+    box-shadow: 1px 20px 30px black;
+    max-height: 500px;
+}
+
+.proyecto-datos a{
+    text-decoration: none;
+    color: black;
+
 }

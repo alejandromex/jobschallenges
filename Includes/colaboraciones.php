@@ -71,7 +71,7 @@
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>User Id</label>
+                                                <label>Id de usuario</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?=$usuario->id?></p>
@@ -87,7 +87,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Name</label>
+                                                <label>Nombre</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?=$usuario->nombre?></p>
@@ -95,7 +95,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Email</label>
+                                                <label>Correo E.</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?=$usuario->email?></p>
@@ -103,7 +103,7 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Phone</label>
+                                                <label>Celular</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?=$usuario->celular?></p>
@@ -111,33 +111,15 @@
                                         </div>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Profession</label>
+                                                <label>Profesion</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?=$usuario->profesion?></p>
                                             </div>
                                         </div>
-                            </div> 
-                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label>Experience</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p><?=$usuario->proyectos?></p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
+                                                <label>Nivel de ingles</label>
                                             </div>
                                             <div class="col-md-6">
                                                 <p><?=$usuario->ingles?></p>
@@ -151,6 +133,41 @@
                                                 <p><?=$usuario->estado?></p>
                                             </div>
                                         </div>
+                            </div> 
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nivel de usuario</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Talento de bronce</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Proyectos Totales</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><?=$usuario->proyectos?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Colaboraciones Totales</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><?=$usuario->colaboraciones?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Puntos Totales</label>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p><?=$usuario->puntos?></p>
+                                            </div>
+                                        </div>
+
                                 
                             </div>
 
