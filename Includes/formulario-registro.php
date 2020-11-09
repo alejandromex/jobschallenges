@@ -27,11 +27,12 @@
       <input type="password" name="password" class="form-control"  placeholder="Password" require>
     </div>
   </div>
-  <div class="form-group row">
-    <label for="area" class="col-sm-2 col-form-label">Area</label>
-    <div class="col-sm-10">
-      <input type="text" name="area" class="form-control"  placeholder="Area" require>
-    </div>
+  <div class="form-group">
+    <label for="area">Tipo de usuario</label>
+    <select class="form-control" name="area" id="area">
+      <option>Talento</option>
+      <option>Reclutador</option>
+    </select>
   </div>
   <div class="form-group row">
     <div class="col-sm-10">

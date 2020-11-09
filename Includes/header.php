@@ -22,6 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="<?=$url?>Assets/img/logoTalentFinder.png" />
+
 
     <title>Home</title>
 </head>
@@ -29,7 +31,8 @@
 
 
 <nav class="navbar fixed-top navbar-expand-lg barra-principal navbar-dark bg-dark">
-  <a class="navbar-brand logo" href="<?=$url?>index.php">Talent <span>FINDER</span></a>
+  <a class="navbar-brand logo" href="<?=$url?>index.php">
+  Talent <span>FINDER</span></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon expandir"></span>
   </button>
