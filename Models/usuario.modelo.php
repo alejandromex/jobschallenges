@@ -31,7 +31,7 @@
             $this->password = $password;
 
 
-            $response = $this->conn->query("INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `puntos`, `proyectos`, `colaboraciones`, `imagen`, `area`, `fecha`, `celular`, `profesion`, `pagina`, `linkgit`,`facebook`, `linklab`, `nick`, `info`, `ingles`,`estado`) VALUES (NULL, '$nombre', '$apellido', '$email', '$password', '0', '0', '0', 'null', '$area', current_timestamp(), '0','0','0', '0','0','0','0', '0','0','0' )");
+            $response = $this->conn->query("INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `puntos`, `proyectos`, `colaboraciones`, `imagen`, `area`, `fecha`, `celular`, `profesion`, `pagina`, `linkgit`,`facebook`, `linklab`, `nick`, `info`, `ingles`,`estado`,`activo`) VALUES (NULL, '$nombre', '$apellido', '$email', '$password', '0', '0', '0', 'null', '$area', current_timestamp(), '0','Sin profesion registrada','Sin pagina registrada', 'Sin link de GitHub','Sin link a Facebook','Sin link a GitLab','Sin Nick', 'Sin informacion','Sin ingles','Sin estado','1' )");
 
             if($response)
             {
@@ -41,6 +41,25 @@
             }
         }
 
+        public function RegisterColaborador($nombre, $apellido, $email, $password, $area,$empresa,$puesto,$comprobante)
+        {
+            $this->nombre = $nombre;
+            $this->apellido = $apellido;
+            $this->email = $email;
+            $this->password = $password;
+
+
+            $response = $this->conn->query("INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `puntos`, `proyectos`, `colaboraciones`, `imagen`, `area`, `fecha`, `celular`, `profesion`, `pagina`, `linkgit`,`facebook`, `linklab`, `nick`, `info`, `ingles`,`estado`,`activo`,`empresa`,`puesto`,`comprobante`) VALUES (NULL, '$nombre', '$apellido', '$email', '$password', '0', '0', '0', 'null', '$area', current_timestamp(), '0','Sin profesion registrada','Sin pagina registrada', 'Sin link de GitHub','Sin link a Facebook','Sin link a GitLab','Sin Nick', 'Sin informacion','Sin ingles','Sin estado','0', '$empresa', '$puesto', 'comprobatesReclutador/$comprobante' )");
+
+            if($response)
+            {
+                return "success";
+            }else{
+                return "error";
+            }
+        }
+
+
         public function Login($email, $password)
         {
             //Validamos si existe el email
@@ -49,6 +68,12 @@
             if($user == null)
             {
                 return "error";
+            }
+            $valido = $user->activo;
+
+            if($valido == 0)
+            {
+                return "no activo";
             }
             if($password == $user->password)
             {
@@ -78,9 +103,9 @@
             return $usuarios;
         }
 
-        public function actualizarPerfil($nombre,$apellido,$celular,$profesion,$pagina,$github,$gitlab,$facebook,$nick,$info,$ingles,$estado,$id)
+        public function actualizarPerfil($nombre,$apellido,$celular,$profesion,$pagina,$github,$gitlab,$facebook,$nick,$info,$ingles,$estado,$etiqueta,$id)
         {
-            $response = $this->conn->query("UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', celular = '$celular', profesion = '$profesion', pagina = '$pagina', linkgit = '$github', linklab = '$gitlab', facebook = '$facebook', nick = '$nick', info = '$info', ingles = '$ingles', estado = '$estado' WHERE usuarios.id = '$id';");
+            $response = $this->conn->query("UPDATE usuarios SET nombre = '$nombre', apellido = '$apellido', celular = '$celular', profesion = '$profesion', pagina = '$pagina', linkgit = '$github', linklab = '$gitlab', facebook = '$facebook', nick = '$nick', info = '$info', ingles = '$ingles', role = '$etiqueta', estado = '$estado' WHERE usuarios.id = '$id';");
             return $response;
         }
 

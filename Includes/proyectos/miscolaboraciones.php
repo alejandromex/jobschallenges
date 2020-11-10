@@ -2,8 +2,8 @@
     if(isset($_SESSION['login']) ) 
     {
     $proyectoController = new ProyectoController();
-    $proyectos = $proyectoController->MisProyectos($_SESSION['id']);
-    
+    $proyectos = $proyectoController->MisColaboraciones($_SESSION['id']);
+  //select proyectos.titulo, proyectos.area, proyectos.imagen, proyectos.descripcion, proyectos.habilidades, proyectos.creador, proyectos.fechacierre, proyectos.fecha, proyectos.id from colaboraciones join proyectos on proyectos.creador = colaboraciones.creadorid where colaboraciones.colaboradorid = 40  
 ?>
 
 <div class="row">
@@ -33,12 +33,9 @@
             </p>
         </p>
         <div class="btn-group" role="group" aria-label="Basic example">
-              <?php if(isset($_SESSION)) : ?>
-              <?php if($_SESSION['id'] == $proyecto->creador) : ?>
-              <a href="<?=$url?>proyecto.php/<?=$proyecto->id?>" class="btn btn-success">Ver nota completa</a>
-              <a href="<?=$url?>trabajar.php/<?=$proyecto->id?>" class="btn btn-info">Comenzar</a>
-              <button type="button" class="btn btn-danger">Eliminar</button>
-            <?php endif ?>
+
+            <?php if(isset($_SESSION['login']) && $proyecto->creador != $_SESSION['id']) : ?>
+            <a href="<?=$url?>trabajar.php/<?=$proyecto->id?>" class="btn btn-info">Comenzar</a>
             <?php endif ?>
           </div>   
       </div>

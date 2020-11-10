@@ -44,6 +44,82 @@ class UsuarioController{
 
     }
 
+    public function registerReclutador()
+    {
+      if(isset($_POST['registrar-reclutador']) && $_POST['registrar-reclutador'] != "")
+      {
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $email = $_POST['email'];
+        $area = $_POST['area'];
+        $empresa = $_POST['empresa'];
+        $puesto = $_POST['puesto'];
+
+        
+
+        if($nombre != "" && $apellido != "" && $email != "" && $_POST['password'] != "" && $area != "" && $empresa != "" && $puesto != "")
+        {
+
+              $password_hash = crypt($_POST["password"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
+              //Comprobamos imagen y subimos
+              $fecha = new DateTime();
+              #webdebe.com
+              if(isset($_FILES['comprobante'])) {
+
+                  $archivo = $_FILES['comprobante']['name'];
+                  $tipo_imagen = $_FILES{'comprobante'}['type'];
+                  $size = $_FILES['comprobante']['size'];
+                  $comprobante = $fecha->getTimestamp().$archivo;
+
+                  $carpeta_destino = "comprobatesReclutador/";
+
+                  move_uploaded_file($_FILES['comprobante']['tmp_name'],$carpeta_destino.$comprobante);
+                  
+
+              }
+              else{
+                echo "
+                <script>
+                Swal.fire({
+                title: 'Error al registrarse!',
+                text: 'Ingrese todos los datos para registrarse correctamente',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+              </script>";
+              }
+              $response = $this->usuarioModelo->RegisterColaborador($nombre, $apellido, $email, $password_hash, $area,$empresa,$puesto,$comprobante);
+              if($response == "success")
+              {
+                  echo "
+                  <script>
+                  Swal.fire({
+                  title: 'Registro casi completo!',
+                  text: 'Espere a que un administrador valide su comprobante',
+                  icon: 'success',
+                  confirmButtonText: 'Cool'
+                })
+                </script>";
+              }
+
+        }
+        else{
+            echo "
+            <script>
+            Swal.fire({
+            title: 'Error al registrarse como reclutador!',
+            text: 'Ingrese todos los datos para registrarse correctamente',
+            icon: 'error',
+            confirmButtonText: 'Cool'
+          })
+          </script>";
+        }
+
+      }
+      
+    }
+
+
     public function Login()
     {
         if(isset($_POST['login']))
@@ -54,6 +130,20 @@ class UsuarioController{
                 $password= $_POST['password'];
                 $password_hash = crypt($_POST["password"], '$2a$07$asxx54ahjppf45sd87a5a4dDDGsystemdev$');
                 $response = $this->usuarioModelo->Login($email,$password_hash);
+
+                if($response == "no activo")
+                {
+                  echo "
+                  <script>           
+                    Swal.fire({
+                      position: 'center',
+                      icon: 'warning',
+                      title: 'usuario reclutador no verificado',
+                      showConfirmButton: false,
+                      timer: 1500
+                    })
+                </script>";
+                }
                     
                 if($response == "ok")
                 {
@@ -79,6 +169,18 @@ class UsuarioController{
                 }
 
 
+            }
+            else{
+              echo "
+              <script>           
+                Swal.fire({
+                  position: 'center',
+                  icon: 'error',
+                  title: 'Contraseña y/o email incorrecto',
+                  showConfirmButton: false,
+                  timer: 1500
+                })
+            </script>";
             }
         }
 

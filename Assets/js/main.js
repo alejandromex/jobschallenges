@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    var url = "http://localhost/JobsChallenge/";
     function readURL(input)
     {
         if(input.files && input.files[0])
@@ -56,5 +56,56 @@ $(document).ready(function(){
         var fechacierre = $("#fechacierre").val();
         $("#fechacierre-publicacion").text("Fecha de cierre: "+fechacierre);
     })
+
+
+    var tipoUsuario = $("#tipo-usuario");
+
+    tipoUsuario.change(function(){
+        console.log("Hola mundo");
+        if(tipoUsuario.val() == "Reclutador")
+        {
+            $(".formulario-reclutador").removeClass("d-none");
+            $("#btn-registrar-talento").addClass("d-none");
+        }
+        else{
+            $(".formulario-reclutador").addClass("d-none");
+            $("#btn-registrar-talento").removeClass("d-none");
+
+
+        }
+    })
+
+    var btnAceptar = $(".btn-aceptar-postulado");
+    for(var i =0; i <btnAceptar.length; i++)
+    {
+        $(btnAceptar[i]).click(function(){
+            var idAceptar = ($(this)).attr("postuladoId");
+            var idProyecto = ($(this)).attr("proyectoId");
+            var datos = new FormData();
+            datos.append("idAceptar", idAceptar);
+            datos.append("idProyecto", idProyecto);
+            $.ajax({
+                url:url+"Assets/ajax/postulados.ajax.php",
+                method:"POST",
+                data: datos,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(respuesta)
+                {
+                    var id = respuesta;
+                    $("#aceptar"+id).remove();
+                    Swal.fire({
+                        title: 'En Horabuena ! !',
+                        text: 'has añadido un colaborador',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
+            })
+        });
+    }
+
+
 
 })

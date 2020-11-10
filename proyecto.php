@@ -73,14 +73,28 @@
                         Fecha de cierre: <?=$proyecto->fechacierre?>
                         </p>
                     </p>
+                    
+
+
                     <div class="btn-group" role="group" aria-label="Basic example">
                     <?php if(isset($_SESSION['login']) && $proyecto->creador != $_SESSION['id']) : ?>
-                        <button type="button" class="btn btn-info">Postularme</button>
+                    <form method="post">
+                        <input type="hidden" name="idpost" value="<?=$idpost?>">
+                        <input type="hidden" name="colaboradorid" value="<?=$_SESSION['id']?>">
+                        <input type="hidden" name="creadorid" value="<?=$usuarioCreador->id?>">
+                        
+                        <?php
+                           $postulado =  $proyectoController->Postularme();
+                        ?>
+
+                        <input type="submit" name="postularme" class="btn btn-info" value="Postularme">
+                    </form>
                         <?php endif ?>
 
                         <?php if(isset($_SESSION)) : ?>
                         <?php if($_SESSION['id'] == $proyecto->creador) : ?>
                         <button data-toggle="modal" data-target="#postuladosModal" class="btn btn-warning">Postulados</button>
+                        <a href="<?=$url?>trabajar.php/<?=$proyecto->id?>" class="btn btn-info">Comenzar</a>
                         <button type="button" class="btn btn-danger">Eliminar</button>
                         <?php endif ?>
                         <?php endif ?>

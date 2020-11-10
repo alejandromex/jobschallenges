@@ -33,14 +33,12 @@
 
             <?php if(isset($_SESSION['login']) && $proyecto->creador != $_SESSION['id']) : ?>
             <a href="<?=$url?>proyecto.php/<?=$proyecto->id?>" class="btn btn-success">Ver nota completa</a>
-
-            <button type="button" class="btn btn-info">Postularme</button>
             <?php endif ?>
 
               <?php if(isset($_SESSION['login'])) : ?>
               <?php if($_SESSION['id'] == $proyecto->creador) : ?>
               <a href="<?=$url?>proyecto.php/<?=$proyecto->id?>" class="btn btn-success">Ver nota completa</a>
-
+              <a href="<?=$url?>trabajar.php/<?=$proyecto->id?>" class="btn btn-info">Comenzar</a>
               <button type="button" class="btn btn-danger">Eliminar</button>
             <?php endif ?>
             <?php endif ?>

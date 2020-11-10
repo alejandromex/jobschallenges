@@ -81,7 +81,7 @@ if(isset($_POST['submit']))
             }
     
     
-            $response = $usuarioModelo->actualizarPerfil($nombre,$apellido,$celular,$profesion,$pagina,$github,$gitlab,$facebook,$nick,$info,$ingles,$estado,$_SESSION['id']);
+            $response = $usuarioModelo->actualizarPerfil($nombre,$apellido,$celular,$profesion,$pagina,$github,$gitlab,$facebook,$nick,$info,$ingles,$estado,$etiqueta,$_SESSION['id']);
             var_dump($response);
         }
         else{

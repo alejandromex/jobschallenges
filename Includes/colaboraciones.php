@@ -140,7 +140,7 @@
                                                 <label>Nivel de usuario</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Talento de bronce</p>
+                                                <p><?=$usuario->role?></p>
                                             </div>
                                         </div>
                                         <div class="row">

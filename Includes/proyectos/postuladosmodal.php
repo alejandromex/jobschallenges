@@ -8,37 +8,23 @@
         </button>
       </div>
       <div class="modal-body">
+
+      <?php
+        $proyectoController = new ProyectoController();
+        $aceptado = 0;
+        $postulados = $proyectoController->getPostulados($idpost,$aceptado);
+      
+      ?>
         <div class="row">
-          <div class="col-sm-12">
-            Alejandro velazquez
-            <div class="btn btn-success">Aceptar</div>
-            <div class="btn btn-danger">Cancelar</div>
+        <?php while($postulado = $postulados->fetch_object()): ?>
+          <div class="col-sm-12 postulado" id="aceptar<?=$postulado->id?>">
+            <a href="<?=$url?>talento.php/perfil/<?=$postulado->id?>" class=><?=$postulado->nombre?> <?=$postulado->apellido?></a> 
+            <div>
+              <div proyectoId=<?=$idpost?>   postuladoId=<?=$postulado->id?> class="btn btn-success btn-aceptar-postulado">Aceptar</div>
+              <div class="btn btn-danger">Cancelar</div>
+            </div>
           </div>
-          <div class="col-sm-12">
-            Alejandro velazquez
-            <div class="btn btn-success">Aceptar</div>
-            <div class="btn btn-danger">Cancelar</div>
-          </div>
-          <div class="col-sm-12">
-            Alejandro velazquez
-            <div class="btn btn-success">Aceptar</div>
-            <div class="btn btn-danger">Cancelar</div>
-          </div>
-          <div class="col-sm-12">
-            Alejandro velazquez
-            <div class="btn btn-success">Aceptar</div>
-            <div class="btn btn-danger">Cancelar</div>
-          </div>
-          <div class="col-sm-12">
-            Alejandro velazquez
-            <div class="btn btn-success">Aceptar</div>
-            <div class="btn btn-danger">Cancelar</div>
-          </div>
-          <div class="col-sm-12">
-            Alejandro velazquez
-            <div class="btn btn-success">Aceptar</div>
-            <div class="btn btn-danger">Cancelar</div>
-          </div>
+          <?php endwhile ?>
         </div>
       </div>
       <div class="modal-footer">

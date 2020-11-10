@@ -61,7 +61,7 @@
                             <label for="etiqueta" class="col-4 col-form-label">Etiqueta de usuario</label> 
                             <div class="col-8">
                                 <select id="etiqueta" required name="etiqueta" class="custom-select">
-                                    <option value="talento">Talento</option>
+                                    <option>Bronce</option>
                                 </select>
                             </div>
                         </div>

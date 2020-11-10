@@ -83,6 +83,62 @@ class ProyectoController{
         $proyectos = $this->proyectoModelo->MisProyectos($id);
         return $proyectos;
     }
+
+    public function MisColaboraciones($id)
+    {
+        $colaboraciones = $this->proyectoModelo->MisColaboraciones($id);
+        return $colaboraciones;
+    }
+
+    public function getPostulados($idpost,$aceptado){
+        $postulados = $this->proyectoModelo->getPostulados($idpost,$aceptado);
+        return $postulados;
+    }
+
+    public function Postularme()
+    {
+        if(isset($_POST['postularme'])){
+            $idpost = $_POST['idpost'];
+            $colaboradorid = $_POST['colaboradorid'];
+            $creadorid = $_POST['creadorid'];
+            $postularse = $this->proyectoModelo->Postularme($idpost,$colaboradorid,$creadorid);
+            if($postularse == "existe")
+            {
+                echo "
+                <script>
+                Swal.fire({
+                title: 'Ya estas postulado!',
+                text: 'Te has postulado anteriormente, puedes cancelarla desde tu perfil (Colaboraciones)',
+                icon: 'warning',
+                confirmButtonText: 'Cool'
+              })
+              </script>";
+            }
+            if($postularse == "ok")
+            {
+                echo "
+                <script>
+                Swal.fire({
+                title: 'En Horabuena ! !',
+                text: 'Te has postulado correctamente',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+              })
+              </script>";
+            }
+        }
+    }
+
+    public function AceptarPostulado($idaceptar, $idproyecto)
+    {
+        $respuesta = $this->proyectoModelo->AceptarPostulado($idaceptar,$idproyecto);
+        return $respuesta;
+    }
+
+    public function validarAcceso($miid,$idpost){
+        $validar = $this->proyectoModelo->validarAcceso($miid, $idpost);
+        return $validar;
+    }
 }
 
 

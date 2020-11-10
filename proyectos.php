@@ -39,7 +39,7 @@
             </div>
 
             <div class="tab-pane fade" id="colaboracioes" role="tabpanel" aria-labelledby="colaboracioes-tab">
-                <h1>Upss, Actualmente no colaboras en ningun proyecto</h1>
+            <?php require_once 'includes/proyectos/miscolaboraciones.php'; ?>
 
 
             </div>
