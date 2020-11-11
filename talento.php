@@ -1,6 +1,7 @@
 <?php
      require_once 'includes/header.php'; 
 
+
      $rutas = $_SERVER["REQUEST_URI"];
      $rutas = explode("/", $rutas);
      $usuarioId;
@@ -56,7 +57,11 @@
     <div class="contenedor-perfil">
         <div class="row detalles-perfil">
             <div class="col-md-6 col-sm-12">
+                
                 Hello
+
+
+
                 <p class="text-white">I'm  <span class="color-rosa"><?=$usuario->nombre?><span></p>
                 <?=$usuario->profesion?> <span class="color-rosa">&&</span> mobile developer
                 <br>
@@ -106,13 +111,16 @@
             <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                 <?php include_once 'includes/profile.php'; ?>
             </div>
-            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Contacto</div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <?php include_once 'includes/contactar.php' ?>
+
+            </div>
             <div class="tab-pane fade" id="pills-colaboraciones" role="tabpanel" aria-labelledby="pills-colaboraciones-tab">
                 <?php include_once 'includes/colaboraciones.php' ?>
             </div>
         </div>
     
-    </div>
+    </div> 
 </div>
 
 

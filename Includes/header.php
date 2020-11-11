@@ -98,8 +98,13 @@
       require_once 'Controllers/proyecto.controller.php';
       require_once 'Models/proyecto.modelo.php';
 
+
       
       
+      require 'Exception.php';
+      require 'PHPMailer.php';
+      require 'SMTP.php';
+
 
     ?>
 
