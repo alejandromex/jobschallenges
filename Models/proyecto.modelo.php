@@ -52,7 +52,7 @@ class ProyectoModelo
     }
 
     public function getPostulados($idpost,$aceptado){
-        $postulados = $this->conn->query("SELECT usuarios.nombre, usuarios.apellido, usuarios.id FROM `colaboraciones` join usuarios on usuarios.id = colaboradorid WHERE colaboraciones.proyectoid = $idpost and colaboraciones.aceptado = '$aceptado'");
+        $postulados = $this->conn->query("SELECT usuarios.nombre, usuarios.apellido, usuarios.id, usuarios.imagen, colaboraciones.creadorid FROM `colaboraciones` join usuarios on usuarios.id = colaboradorid WHERE colaboraciones.proyectoid = $idpost and colaboraciones.aceptado = '$aceptado'");
         return $postulados;
     }
 
@@ -81,6 +81,27 @@ class ProyectoModelo
     public function validarAcceso($miid, $idpost){
         $validar = $this->conn->query("SELECT * from colaboraciones where colaboradorid = '$miid' and proyectoid = '$idpost' and aceptado = '1'");
         return $validar;
+    }
+
+    public function getCreador($idpost){
+        $creador = $this->conn->query("select usuarios.nombre, usuarios.apellido, usuarios.id, usuarios.imagen from colaboraciones join usuarios on usuarios.id = colaboraciones.creadorid where colaboraciones.proyectoid = $idpost limit 1");
+        return $creador->fetch_object();
+
+    }
+
+    public function getAvances($idpost){
+        $avances = $this->conn->query("select avances.id, avances.titulo, avances.archivos, avances.descripcion, avances.fecha, usuarios.nombre, usuarios.imagen, usuarios.id as 'usuarioid' from avances join usuarios on usuarios.id = avances.usuarioid where avances.proyectoid = $idpost");
+        return $avances;
+    }
+
+    public function getAvance($idpost){
+        $avances = $this->conn->query("select avances.id, avances.titulo, avances.archivos, avances.descripcion, avances.fecha, usuarios.nombre, usuarios.imagen, usuarios.id as 'usuarioid' from avances join usuarios on usuarios.id = avances.usuarioid where avances.id = $idpost");
+        return $avances;
+    }
+
+    public function registrarAvance($idUsuario,$titulo,$descripcion,$json_archivos,$idproyecto){
+        $response = $this->conn->query("INSERT INTO avances (`usuarioid`, `titulo`, `descripcion`, `archivos`, `proyectoid`) values ('$idUsuario','$titulo','$descripcion','$json_archivos','$idproyecto')");
+        return $response;
     }
 }
 

@@ -139,6 +139,69 @@ class ProyectoController{
         $validar = $this->proyectoModelo->validarAcceso($miid, $idpost);
         return $validar;
     }
+
+    public function getCreador($idpost){
+        $creador = $this->proyectoModelo->getCreador($idpost);
+        return $creador;
+    }
+    public function getAvances($idpost){
+        $avances = $this->proyectoModelo->getAvances($idpost);
+        return $avances;
+    }
+
+    public function getAvance($idpost){
+        $avances = $this->proyectoModelo->getAvance($idpost);
+        return $avances;
+    }
+
+    public function registrarAvance()
+    {
+        if(isset($_POST['registrarAvance']) && $_POST['titulo'] != "" && $_POST['descripcion'] != "" && isset($_FILES['foto']) && $_FILES['foto']['name'] != "" && isset($_FILES{'texto'}) && $_FILES{'texto'}['name'] != "")
+        {
+            //Hacemos json de files
+            $fecha = new DateTime();
+
+            //SUBIMOS FOTO
+            $archivo = $_FILES['foto']['name'];
+            $tipo_imagen = $_FILES{'foto'}['type'];
+            $size = $_FILES['foto']['size'];
+            $nombreFoto = $fecha->getTimestamp().$archivo;
+            $carpeta_destino = "avances/";
+            move_uploaded_file($_FILES['foto']['tmp_name'],$carpeta_destino.$nombreFoto);        
+
+
+            //SUBIMOS EL TEXTO
+            $archivo = $_FILES['texto']['name'];
+            $tipo_imagen = $_FILES{'texto'}['type'];
+            $size = $_FILES['texto']['size'];
+            $nombreTexto = $fecha->getTimestamp().$archivo;
+            $carpeta_destino = "avances/";
+            move_uploaded_file($_FILES['texto']['tmp_name'],$carpeta_destino.$nombreTexto);            
+
+            $archivos = array(
+                "foto" => $nombreFoto,
+                "texto" => $nombreTexto
+            );
+
+            $json_archivos = json_encode($archivos);
+
+            $titulo = $_POST['titulo'];
+            $descripcion = $_POST['descripcion'];
+            $idUsuario = $_POST['idusuario'];
+            $idproyecto = $_POST['idproyecto'];
+
+            $response = $this->proyectoModelo->registrarAvance($idUsuario,$titulo,$descripcion,$json_archivos,$idproyecto);
+            var_dump($idproyecto);
+            $link = "trabajar.php/".$idproyecto;
+            echo "<script>window.location.href='".$idproyecto."';</script>";
+            
+
+
+        }
+
+    }
+
+
 }
 
 

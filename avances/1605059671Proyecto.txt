@@ -1,0 +1,16 @@
+PM2.5-----------
+PM10--------
+Altitud------
+Temperatura---------
+Presion-------------
+longitud-----------
+Velocidad del viento------
+Amoniaco XXXXX
+Alcohol XXXXXX
+Benceno XXXXX
+Humo XXXXX
+NOx XXXXXX
+monoxido XXXXXX
+Dioxido de carbono XXXXXX
+
+Apartir de que se suerta el globo registrar los datos a diferencia de 10 metros 
