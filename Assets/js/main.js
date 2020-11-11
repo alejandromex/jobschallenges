@@ -106,6 +106,69 @@ $(document).ready(function(){
         });
     }
 
+    var btnComentar = $("#btncomentar");
+    var txtComentar = $("#txtcomentar");
+    var idusuario = $("#idusuario").attr("value");
+    var idpost = $("#idpost").attr("value");
+
+    btnComentar.click(function(){
+        var comentario = txtComentar.val();
+        var datos = new FormData();
+
+        datos.append("idusuario",idusuario);
+        datos.append("idpost", idpost);
+        datos.append("comentario", comentario);
+
+        $.ajax({
+            url: url+"Assets/ajax/comentarios.ajax.php",
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(respuesta)
+            {
+                if(respuesta)
+                {
+                    location.reload(true);
+
+                }
+            }
+        })
+    });
+
+
+    var btnComentarforo = $("#btncomentarforo");
+    var txtComentarforo = $("#txtcomentarforo");
+    var idusuarioforo = $("#idusuarioforo").attr("value");
+    var idpostforo = $("#idpostforo").attr("value");
+
+    btnComentarforo.click(function(){
+        var comentarioforo = txtComentarforo.val();
+        var datos = new FormData();
+
+        datos.append("idusuarioforo",idusuarioforo);
+        datos.append("idpostforo", idpostforo);
+        datos.append("comentarioforo", comentarioforo);
+
+        $.ajax({
+            url: url+"Assets/ajax/comentarios.ajax.php",
+            method: "POST",
+            data: datos,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(respuesta)
+            {
+                if(respuesta)
+                {
+                    location.reload(true);
+
+                }
+            }
+        })
+    });
+
 
 
 })

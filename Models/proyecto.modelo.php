@@ -103,6 +103,17 @@ class ProyectoModelo
         $response = $this->conn->query("INSERT INTO avances (`usuarioid`, `titulo`, `descripcion`, `archivos`, `proyectoid`) values ('$idUsuario','$titulo','$descripcion','$json_archivos','$idproyecto')");
         return $response;
     }
+
+    public function getComentarios($idpost)
+    {
+        $comentarios = $this->conn->query("select usuarios.nombre, usuarios.apellido, usuarios.id as 'usuarioid', usuarios.imagen, proyectocomentarios.comentario, proyectocomentarios.fecha from proyectocomentarios join usuarios on usuarios.id = proyectocomentarios.usuarioid where proyectocomentarios.avanceid = $idpost order by proyectocomentarios.id desc");
+        return $comentarios;
+    }
+
+    public function RealizarComentario($idpost,$idusuario,$comentario){
+        $comentar = $this->conn->query("INSERT INTO proyectocomentarios (`avanceid`, `usuarioid`, `comentario`) values ('$idpost', '$idusuario', '$comentario')");
+        return $comentar;
+    }
 }
 
 

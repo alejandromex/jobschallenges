@@ -10,55 +10,51 @@
         <div class="presentacion-talento">
             <h2>Talentos</h2>
             <div class="talentos-descripcion">
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos veniam nobis temporibus veritatis dignissimos. Fugit possimus porro, illo harum, vel aliquam, optio doloremque ducimus dicta pariatur atque saepe molestiae ratione.</p>
-                <p>Lorem ipsum dolor sit amet consectes temporibus veritatis dignissimos. Fugit possimus porro, illo harum, vel aliquam, optio doloremque ducimus dicta pariatur atque saepe molestiae ratione.</p>
-                <p>s. Fugit possimus porro, illo harumestiae ratione.</p>
-                <p>Lorem ipsum dolor sit amet consecteturos. Fugit possimus porro, illo harum, vel aliquam, optio doloremque ducimus dicta pariatur atque saepe molestiae ratione.</p>
+                <p>Si estas aqui con fines de encontrar al empleado o compañero ideal para tu trabajo y/o proyecto, estas en el lugar correcto.</p>
+                <p>Con mas de 3000 usuarios de diferentes areas la ausencia de personal en las empresas sera un mito</p>
+                <p>¿Estas buscando un talento?</p>
+                <p>Encuentra el talento idea, llenando el formulario de bajo y apareceran los talentos que mas se adapten a tu perfil y requerimentos</p>
                 <form>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <label for="estudios">Estudios</label>
+      <input type="text" class="form-control" id="estudios" placeholder="Estudios">
     </div>
     <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <label for="habilidades">Habilidades</label>
+      <input type="text" class="form-control" id="habilidades" placeholder="Habilidades">
     </div>
   </div>
   <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+    <label for="perfilideal">Redacta tu perfil ideal</label>
+    <input type="text" class="form-control" id="perfilideal" placeholder="Persona con actitudes, colaborador...">
   </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-  </div>
+
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity">
+      <label for="inputCity">Ciudad</label>
+      <input type="text" class="form-control" id="inputCity" placeholder="Ciudad">
     </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control">
-        <option selected>Choose...</option>
-        <option>...</option>
-      </select>
+    <div class="form-group col-md-6">
+      <label for="estado">Estado</label>
+      <input type="text" class="form-control" id="estado" placeholder="Estado">
+
     </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div>
+
   </div>
   <div class="form-group">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="gridCheck">
       <label class="form-check-label" for="gridCheck">
-        Check me out
+        Mostrar Talentos de Oro
       </label>
     </div>
   </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
+  <div class="form-group">
+    <label for="correo">Correo Electronico</label>
+    <input type="mail" class="form-control" id="correo" placeholder="Deja tu correo y nos comunicaremos">
+  </div>
+  <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
             </div>
         </div>
@@ -69,12 +65,15 @@
     <div class="contenedor-mediano">
         <h3>Estamos emocionados por que seas parte de Talent Finder Guadalajara</h3>
         <p>
-        A high-quality American university education is now at your fingertips. With a UX Design certification from UC San Diego Extension, you will acquire the skills and knowledge to launch a successful career in tech. Our program is designed to be convenient and flexible for working professionals. Attend classes online, join discussion groups, and listen to guest lectures by industry professionals from prominent Silicon Valley companies.
+        Este proyecto es realizado con la intención de unir a la comunidad emprendedora y con ganas de sobresalir, demostrando sus aptitudes y habilidades en sus áreas de desempeño. Así mismo brindar un espacio para empleadores de reclutar candidatos aptos, brindándoles un forma de ver el desempeño de los promesas de empleados de cerca, permitiéndoles así una mejor opinión de los prospectos.
         </p>
 
         <p>
-        Top universities, like Universidad de Guadalajara and Tecnológico de Monterrey, are building the talent Mexico needs to grow and develop its tech sector. In recent years, Guadalajara has turned itself into a global center for research and development, programming, and design. International investors are paying close attention to Mexico, and the 500 Startups program is providing Latin American startups with funding and mentorship to grow their businesses. Our program can get you trained to work in Mexico’s growing tech sector in just 24 weeks.
+          De esta manera ver como se desenvuelven en las diferentes problemáticas presentadas y el como colaboran con otros usuarios, así mismo ver su proactividad, creatividad y ganas de trabajar, esas son virtudes que un currículo no puede dar a visualizar.
         </p>
+       <div style="color:white">
+       Unete Ahora
+       </div> 
     </div>
 </div>
 <!--  -->
@@ -92,7 +91,7 @@
       <div class="talentos-grid">
         <?php while($user = $usuarios->fetch_object()) : ?>
          <a href="<?=$url?>talento.php/perfil/<?=$user->id?>">
-          <div class="card">
+          <div class="card talento-caja">
             <img class="card-img-top" src="<?=$url?><?=$user->imagen?>" alt="Card image cap">
             <div class="card-body">
               <h5 class="card-title"><?=$user->nombre?> <?=$user->apellido?></h5>

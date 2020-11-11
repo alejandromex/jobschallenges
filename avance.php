@@ -76,40 +76,32 @@
                 ?>
             <div class="comentar">
                 <img src="<?=$url?><?=$usuarioNuestro->imagen?>" alt="">
-                <input type="text" name="comentar" placeholder="Deja un comentario" id="">
-                <button class="btn btn-info"> Comentar</button>
+                <input type="hidden" name="idusuario" id="idusuario" value="<?=$_SESSION['id']?>">
+                <input type="hidden" name="idpost" id="idpost" value="<?=$idpost?>">
+                <input type="text" name="comentar" id="txtcomentar" placeholder="Deja un comentario" id="">
+                <button id="btncomentar" class="btn btn-info"> Comentar</button>
             </div>
             <div class="comentarios">
+                <?php
+                    $comentarios = $proyectoController->getComentarios($idpost);
+                    while($comentario = $comentarios->fetch_object()): 
+                ?>
                 <div class="comentario-usuario">
-                    <img src="<?=$url?><?=$usuarioNuestro->imagen?>" alt="">
-                    <label type="text" name="comentar" placeholder="Deja un comentario" id="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatem molestias nesciunt sunt perspiciatis maxime natus, repellendus velit, dolor iure vel? Fugiat, obcaecati laborum. Veniam, fugiat. Hic dignissimos debitis alias.</label>
+                    <img src="<?=$url?><?=$comentario->imagen?>" alt="">
+                    <div class="comentario-interno">
+                      <a style="color:blue" href="<?=$url?>talento.php/perfil/<?=$comentario->usuarioid?>"><strong><?=$comentario->nombre?> <?=$comentario->apellido?></strong></a>
+                        <label type="text" name="comentar" placeholder="Deja un comentario" id=""><?=$comentario->comentario?></label>
+                        <div>Publicado el : <?=$comentario->fecha?></div>
+                    </div>
                 </div>
-                <div class="comentario-usuario">
-                    <img src="<?=$url?><?=$usuarioNuestro->imagen?>" alt="">
-                    <label type="text" name="comentar" placeholder="Deja un comentario" id="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatem molestias nesciunt sunt perspiciatis maxime natus, repellendus velit, dolor iure vel? Fugiat, obcaecati laborum. Veniam, fugiat. Hic dignissimos debitis alias.</label>
-                </div>
-                <div class="comentario-usuario">
-                    <img src="<?=$url?><?=$usuarioNuestro->imagen?>" alt="">
-                    <label type="text" name="comentar" placeholder="Deja un comentario" id="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatem molestias nesciunt sunt perspiciatis maxime natus, repellendus velit, dolor iure vel? Fugiat, obcaecati laborum. Veniam, fugiat. Hic dignissimos debitis alias.</label>
-                </div>
-                <div class="comentario-usuario">
-                    <img src="<?=$url?><?=$usuarioNuestro->imagen?>" alt="">
-                    <label type="text" name="comentar" placeholder="Deja un comentario" id="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatem molestias nesciunt sunt perspiciatis maxime natus, repellendus velit, dolor iure vel? Fugiat, obcaecati laborum. Veniam, fugiat. Hic dignissimos debitis alias.</label>
-                </div>
-                <div class="comentario-usuario">
-                    <img src="<?=$url?><?=$usuarioNuestro->imagen?>" alt="">
-                    <label type="text" name="comentar" placeholder="Deja un comentario" id="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatem molestias nesciunt sunt perspiciatis maxime natus, repellendus velit, dolor iure vel? Fugiat, obcaecati laborum. Veniam, fugiat. Hic dignissimos debitis alias.</label>
-                </div>
-                <div class="comentario-usuario">
-                    <img src="<?=$url?><?=$usuarioNuestro->imagen?>" alt="">
-                    <label type="text" name="comentar" placeholder="Deja un comentario" id="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla voluptatem molestias nesciunt sunt perspiciatis maxime natus, repellendus velit, dolor iure vel? Fugiat, obcaecati laborum. Veniam, fugiat. Hic dignissimos debitis alias.</label>
-                </div>
+                <?php endwhile ?>
             </div>
+
         </div>
         
     </div>
 
-
+<br>
 </div>
 
 

@@ -18,6 +18,9 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital@1&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <link rel="icon" type="image/png" href="<?=$url?>Assets/img/logoTalentFinder.png" />
+
     <link rel="stylesheet" href="<?=$url?>Assets/css/foro.css">
 
 

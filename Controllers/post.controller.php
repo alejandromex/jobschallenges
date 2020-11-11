@@ -75,6 +75,17 @@ class PostController{
         return $posts;
     }
 
+    public function getComentarios($idpost){
+        $comentarios = $this->postModelo->getComentarios($idpost);
+        return $comentarios;
+    }
+
+    public function ComentarForo($idpost, $idusuario, $comentario)
+    {
+        $response = $this->postModelo->ComentarForo($idpost,$idusuario,$comentario);
+        return $response;
+    }
+
 }
 
 

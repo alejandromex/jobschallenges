@@ -51,13 +51,14 @@
 
                     <input type="date" required class="col-sm-6" name="fechacierre" id="fechacierre">
                 </div>
-                <input type="submit"  name="registrarproyecto" value="Registrar" class="btn btn-info">
 
                 <?php
                     $proyectoController = new ProyectoController();
                     $response = $proyectoController->registrarProyecto();
                     
                 ?>
+
+                <input type="submit"  name="registrarproyecto" value="Registrar" class="btn btn-info">
 
             </form>
       </div>

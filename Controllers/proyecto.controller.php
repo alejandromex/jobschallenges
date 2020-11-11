@@ -14,6 +14,7 @@ class ProyectoController{
     {
         if(isset($_POST['registrarproyecto']))
         {
+
             $titulo = (empty($_POST['titulo']))? "0" : $_POST['titulo'];
             $descripcion = (empty($_POST['descripcion']))? "0" : $_POST['descripcion'];
             $area = (empty($_POST['area']))? "0" : $_POST['area'];
@@ -35,6 +36,7 @@ class ProyectoController{
 
             }
             $response = $this->proyectoModelo->RegistrarProyecto($titulo,$descripcion,$area,$habilidades,$nombreImg,$creadorId,0,$fechacierre);
+ 
             if($response)
             {
 
@@ -65,6 +67,7 @@ class ProyectoController{
             }
             return $response;
         }
+
     }
 
     public function getProyectos()
@@ -199,6 +202,16 @@ class ProyectoController{
 
         }
 
+    }
+
+    public function getComentarios($idpost){
+        $comentarios = $this->proyectoModelo->getComentarios($idpost);
+        return $comentarios;
+    }
+
+    public function RealizarComentario($idpost,$idusuario, $comentario){
+        $comentar = $this->proyectoModelo->RealizarComentario($idpost,$idusuario,$comentario);
+        return $comentar;
     }
 
 

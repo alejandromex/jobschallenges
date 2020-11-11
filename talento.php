@@ -59,6 +59,8 @@
                 Hello
                 <p class="text-white">I'm  <span class="color-rosa"><?=$usuario->nombre?><span></p>
                 <?=$usuario->profesion?> <span class="color-rosa">&&</span> mobile developer
+                <br>
+                   <div class="area-usuario"> <?=$usuario->area?></div>
                 <div class="redes-perfil">
                     <i class="fab fa-facebook-square"></i>
                     <i class="fab fa-twitter-square"></i>

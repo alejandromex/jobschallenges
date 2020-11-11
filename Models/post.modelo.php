@@ -39,6 +39,18 @@ class PostModelo{
         $posts = $this->conn->query("select post.id as 'idpost',post.area,post.titulo,post.contenido,post.img,post.fecha, usuarios.id, usuarios.nombre, usuarios.apellido, usuarios.imagen, usuarios.role from post join usuarios on usuarios.id = escritor where post.escritor = $id order by post.id desc");
         return $posts;
     }
+
+    public function getComentarios($idpost)
+    {
+        $comentarios = $this->conn->query("select usuarios.nombre, usuarios.apellido, usuarios.imagen, usuarios.id as 'usuarioid', forocomentarios.comentario, forocomentarios.fecha from forocomentarios join usuarios on usuarios.id = forocomentarios.usuarioid where forocomentarios.postid = $idpost order by forocomentarios.id desc");
+        return $comentarios;
+    }
+
+    public function ComentarForo($idpost,$idusuario,$comentario)
+    {
+        $response = $this->conn->query("INSERT into forocomentarios (`postid`, `usuarioid`, `comentario`) values ('$idpost', '$idusuario', '$comentario')");
+        return $response;
+    }
 }
 
 

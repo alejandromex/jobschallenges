@@ -65,15 +65,32 @@
                       <?php if(isset($_SESSION['login'])) : ?>
 
                           <img src="<?=$url?><?=$usuario->imagen?>" alt="">
-                          <input type="text" placeholder="Comentar">
-                          <button class="btn btn-info">Comentar</button>
+                          <input type="hidden" name="idusuario" id="idusuarioforo" value="<?=$_SESSION['id']?>">
+                          <input type="hidden" name="idpost" id="idpostforo" value="<?=$idpost?>">
+                          <input type="text" id="txtcomentarforo" placeholder="Comentar">
+                          <button class="btn btn-info" id="btncomentarforo">Comentar</button>
                           <?php else : ?>
                           <p>Para comentar inicie sesion</p>
                           <?php endif ?>
 
                       </div>
                     </div>
-                    <br>
+
+                    <?php 
+
+                    $comentarios = $postController->getComentarios($idpost);
+                    
+                    ?>
+                  <?php while($comentario = $comentarios->fetch_object()) : ?>
+                  <div class="comentario-usuario comentarios-post">
+                      <img src="<?=$url?><?=$comentario->imagen?>" alt="">  
+                    <div class="comentario-interno">
+                        <div> <a style="color: blue;" href="<?=$url?>talento.php/perfil/<?=$comentario->usuarioid?>"><strong><?=$comentario->nombre?> <?=$comentario->apellido?></strong></a></div>
+                        <div><?=$comentario->comentario?></div>
+                        <div>Comentado el: <?=$comentario->fecha?></div>
+                    </div>
+                  </div>
+                  <?php endwhile ?>
                 </div>
                 <br>
 
@@ -82,3 +99,5 @@
 
 
 <?php require_once 'includes/foro/footer.php'; ?>
+
+

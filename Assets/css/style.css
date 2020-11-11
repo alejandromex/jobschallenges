@@ -697,8 +697,30 @@ footer{
 
 }
 
+.area-usuario{
+    font-size: 30px;
+    color:var(--fuschia);
+}
+
+.comentarios-post{
+    background-color: #b3b2b2;
+}
+
+
+.comentario-interno{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
+
 .comentario-usuario img{
     border-radius: 900px;
     width: 50%;
     margin: 0 auto;
+}
+
+.talento-caja{
+    box-shadow: 10px 20px 5px rgba(0, 0, 0, .7);
+    background-color: rgba(255, 255, 255, .8);
+    margin-bottom: 10px;
+    margin-left: 10px;
 }
